@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:900" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
   <div class="site-wrapper">
@@ -24,11 +25,30 @@
       <h2 class="content-title">Help us build a tool which could revolutionize the way people build web layouts.</h2>
       <p class="content-description">project aura is an attempt to create a web design tool which you could talk to. you tell it your thinking process and it will convert it into code. but first help us, by telling us how you will describe your layout .</p>
       <p class="signin-text">Signin with your Github Account to Start.</p>
-      <btn class="btn-github">SignIn With Github</btn>
+      <p class="welcome-message">Welcome <span class="current-user"></span></p>
+      <btn class="btn-github" onclick="openGithubPopUp()">SignIn With Github</btn>
     </main>
     <footer class="aura-footer">
       <p>made with love at <a href="http://cucek.in">cucek</a></p>
     </footer>
   </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+  <script src="js/firebaseConfig.js"></script>
+  <script src="js/githubAuth.js"></script>
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        var btn = document.querySelector('.btn-github');
+        btn.style.display = 'none';
+        var welcomeText = document.querySelector('.current-user');
+        welcomeText.innerHTML = user.displayName;
+      } else {
+        console.log('Not Logged In');
+      }
+    });
+  </script>
 </body>
 </html>

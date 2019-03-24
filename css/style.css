@@ -1,0 +1,52 @@
+/* Layout Styles */
+.site-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 80%;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+}
+.aura-topbar {
+	display: flex;
+	flex-flow: row wrap;
+	flex-basis: 100%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+.aura-content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 60%;
+	margin: 0 auto;
+	justify-content: center;
+}
+.aura-footer {
+	text-align: center;
+	padding: 20px;
+}
+/* Element Styles */
+.content-title {
+	font-family: 'Raleway', 'Open Sans', sans-serif;
+	font-weight: 900;
+}
+.content-title {
+	font-size: 230%;
+	margin-bottom: 0;
+}
+.content-description {
+	font-size: 150%;
+	line-height: 35px;
+}
+.btn-github {
+	background: #23262b;
+	max-width: 200px;
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+}
+
+
